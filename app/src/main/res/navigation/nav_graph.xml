@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    android:label="NYC High Schools (kt)"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.blkxltng.a20200526_mauricegaynor_nycschools_kotlin.ui.main.MainFragment"
+        android:label="NYC High Schools (kt)"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.blkxltng.a20200526_mauricegaynor_nycschools_kotlin.ui.details.DetailsFragment"
+        android:label="School Details (kt)"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="info"
+            app:argType="com.blkxltng.a20200526_mauricegaynor_nycschools_kotlin.models.SchoolInfo"
+            app:nullable="false" />
+        <argument
+            android:name="scores"
+            android:defaultValue="@null"
+            app:argType="com.blkxltng.a20200526_mauricegaynor_nycschools_kotlin.models.SatScores"
+            app:nullable="true" />
+    </fragment>
+</navigation>

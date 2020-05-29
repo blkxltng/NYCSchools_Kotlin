@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">20200526-MauriceGaynor-NYCSchools_Kotlin</string>
+
+    <!-- Labels -->
+    <string name="phone_number_label">Phone Number:</string>
+    <string name="email_label">Email:</string>
+    <string name="website_label">Website:</string>
+    <string name="num_students_label">Number of Students:</string>
+    <string name="school_overview_label">School Overview:</string>
+    <string name="_2012_sat_scores_label">2012 SAT Scores</string>
+    <string name="critical_reading_label">Critical Reading</string>
+    <string name="math_label">Math</string>
+    <string name="writing_label">Writing</string>
+    <string name="no_email_found">-- No email found --</string>
+    <string name="no_phone_number_found">-- No phone number found --</string>
+    <string name="no_website_found">-- No website found --</string>
+
+    <!-- Dialog/Snackbar strings -->
+    <string name="retry">Retry</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
+    <string name="send_an_email">Would you like to email  %1s?</string>
+    <string name="make_a_call">Would you like to call  %1s?</string>
+
+    <!-- Errors -->
+    <string name="error_schools">Issue retrieving list of schools.</string>
+    <string name="error_scores">Issue retrieving SAT scores.</string>
+    <string name="error_no_connection">Please connect to the internet and try again.</string>
+    <string name="error_generic">There was an error.</string>
+    <string name="error_no_app_found">No app was found for your request.</string>
+</resources>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="schoolInfo"
+            type="com.blkxltng.a20200526_mauricegaynor_nycschools_kotlin.models.SchoolInfo" />
+        <variable
+            name="satScores"
+            type="com.blkxltng.a20200526_mauricegaynor_nycschools_kotlin.models.SatScores" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/schoolInfoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{schoolInfo.school_name}"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="My High School Name"/>
+
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    schoolLocation="@{schoolInfo.location}"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toBottomOf="@id/name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="123 Nowhere Lane, NY 12345"/>
+
+                <TextView
+                    android:id="@+id/phoneNumberLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/phone_number_label"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/location" />
+
+                <TextView
+                    android:id="@+id/phoneNumberValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    schoolPhone="@{schoolInfo.phone_number}"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@id/phoneNumberLabel"
+                    app:layout_constraintTop_toTopOf="@id/phoneNumberLabel"
+                    app:layout_constraintBottom_toBottomOf="@id/phoneNumberLabel"
+                    tools:text="123-456-7890" />
+
+                <TextView
+                    android:id="@+id/emailLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/email_label"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/phoneNumberLabel" />
+
+                <TextView
+                    android:id="@+id/emailValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="18sp"
+                    schoolEmail="@{schoolInfo.school_email}"
+                    app:layout_constraintStart_toEndOf="@id/emailLabel"
+                    app:layout_constraintTop_toTopOf="@id/emailLabel"
+                    app:layout_constraintBottom_toBottomOf="@id/emailLabel"
+                    tools:text="myhighschool@schoolmail.edu"/>
+
+                <TextView
+                    android:id="@+id/websiteLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/website_label"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toBottomOf="@id/emailLabel"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/websiteValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="18sp"
+                    schoolWebsite="@{schoolInfo.website}"
+                    app:layout_constraintTop_toBottomOf="@id/websiteLabel"
+                    tools:text="www.besthighschool.edu"/>
+
+                <TextView
+                    android:id="@+id/numStudentsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textSize="18sp"
+                    android:text="@string/num_students_label"
+                    app:layout_constraintTop_toBottomOf="@id/websiteValue"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/numStudentsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:textSize="18sp"
+                    android:text="@{schoolInfo.total_students}"
+                    app:layout_constraintTop_toTopOf="@id/numStudentsLabel"
+                    app:layout_constraintBottom_toBottomOf="@id/numStudentsLabel"
+                    app:layout_constraintStart_toEndOf="@id/numStudentsLabel"
+                    tools:text="999"/>
+
+                <TextView
+                    android:id="@+id/schoolOverviewLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/school_overview_label"
+                    schoolOverviewVisibility="@{schoolInfo.overview_paragraph}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/numStudentsLabel" />
+
+                <TextView
+                    android:id="@+id/overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@{schoolInfo.overview_paragraph}"
+                    schoolOverviewVisibility="@{schoolInfo.overview_paragraph}"
+                    android:textStyle="italic"
+                    app:layout_constraintTop_toBottomOf="@id/schoolOverviewLabel"
+                    tools:text="This is a school overview."/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/satScoreLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="8dp"
+                scoreVisibility="@{satScores}"
+                app:layout_constraintTop_toBottomOf="@id/schoolInfoLayout"
+                tools:layout_editor_absoluteX="8dp">
+
+                <TextView
+                    android:id="@+id/satHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/_2012_sat_scores_label"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/criticalHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/critical_reading_label"
+                    app:layout_constraintEnd_toStartOf="@+id/mathHeader"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/satHeader" />
+
+                <TextView
+                    android:id="@+id/criticalScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{satScores.sat_critical_reading_avg_score}"
+                    app:layout_constraintEnd_toEndOf="@id/criticalHeader"
+                    app:layout_constraintStart_toStartOf="@id/criticalHeader"
+                    app:layout_constraintTop_toBottomOf="@id/criticalHeader"
+                    tools:text="685" />
+
+                <TextView
+                    android:id="@+id/mathHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/math_label"
+                    app:layout_constraintEnd_toStartOf="@+id/writinglHeader"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/criticalHeader"
+                    app:layout_constraintTop_toBottomOf="@id/satHeader" />
+
+                <TextView
+                    android:id="@+id/mathScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{satScores.sat_math_avg_score}"
+                    app:layout_constraintEnd_toEndOf="@id/mathHeader"
+                    app:layout_constraintStart_toStartOf="@id/mathHeader"
+                    app:layout_constraintTop_toBottomOf="@id/mathHeader"
+                    tools:text="685" />
+
+                <TextView
+                    android:id="@+id/writinglHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/writing_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/mathHeader"
+                    app:layout_constraintTop_toBottomOf="@id/satHeader" />
+
+                <TextView
+                    android:id="@+id/writingScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{satScores.sat_writing_avg_score}"
+                    app:layout_constraintEnd_toEndOf="@id/writinglHeader"
+                    app:layout_constraintStart_toStartOf="@id/writinglHeader"
+                    app:layout_constraintTop_toBottomOf="@id/writinglHeader"
+                    tools:text="123" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
